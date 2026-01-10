@@ -15,7 +15,7 @@ import PageHero from '../../components/helpingComp/PageHero';
 import { useInView } from '../../shared/hooks/UseInView';
 
 
-const initialFormState= {
+const initialFormState = {
   firstName: '',
   lastName: '',
   email: '',
@@ -44,7 +44,7 @@ const Input = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-    //   required={required}
+      //   required={required}
       className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
     />
   </div>
@@ -63,52 +63,74 @@ const ContactUs = () => {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  emailjs
-    .send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: `${formData.firstName}`,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        message: formData.message,
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then(
-      () => {
-        alert("ধন্যবাদ! আপনার বার্তা সফলভাবে পাঠানো হয়েছে ✅");
-        setFormData(initialFormState);
-      },
-      (error) => {
-        console.error("Email send error:", error);
-        alert("দুঃখিত, বার্তা পাঠানো যায়নি ❌");
-      }
-    );
-};
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: `${formData.firstName}`,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("ধন্যবাদ! আপনার বার্তা সফলভাবে পাঠানো হয়েছে ✅");
+          setFormData(initialFormState);
+        },
+        (error) => {
+          console.error("Email send error:", error);
+          alert("দুঃখিত, বার্তা পাঠানো যায়নি ❌");
+        }
+      );
+  };
+
+  const sendToWhatsApp = () => {
+    const phoneNumber = "8801627355382"; // 🔴 যেই নাম্বারে যাবে (country code সহ)
+
+    const message = `
+📌 Demo Request
+
+👤 নাম: ${formData.firstName}
+📧 ইমেইল: ${formData.email}
+📞 ফোন: ${formData.phone}
+🏢 প্রতিষ্ঠান: ${formData.company || "N/A"}
+
+📝 বার্তা:
+${formData.message}
+  `;
+
+    const encodedMessage = encodeURIComponent(message.trim());
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  };
 
   // page hero
   const breadcrumbs = [
     { label: "হোম", href: "/" },
-    { label: "যোগাযোগ" }, 
+    { label: "যোগাযোগ" },
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       {/*  Header */}
-      <PageHero title={"যোগাযোগ"} breadcrumbs={breadcrumbs}/>
+      <PageHero title={"যোগাযোগ"} breadcrumbs={breadcrumbs} />
       {/* ✅ Main Section */}
       <main className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
         {/* 🔹 Contact Info */}
         <section ref={infoRef} className="space-y-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">আমাদের সাথে যোগাযোগ করুন</h2>
-          <p className="text-gray-600 text-sm">
-            আপনার যেকোনো প্রশ্ন বা সহায়তার জন্য আমরা সর্বদা প্রস্তুত।
-          </p>
+            <p className="text-gray-600 text-sm">
+              আপনার যেকোনো প্রশ্ন বা সহায়তার জন্য আমরা সর্বদা প্রস্তুত।
+            </p>
           </div>
 
           {/* Cards */}
@@ -200,7 +222,10 @@ const ContactUs = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            sendToWhatsApp();
+          }} className="space-y-6">
             {/* Name Row */}
             <div className="">
               <Input
