@@ -119,6 +119,7 @@ const calculateDiscountedPrice = (price) => {
       { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: true },
       { text: 'অ্যাপ্রুভাল ও ভেরিফাই সিস্টেম', included: true },
       { text: 'রিজার্ভেশন ও বুকিং ব্যবস্থা', included: true },
+      { text: 'ফুয়েল ইনটেলিজেন্স', included: false },
     ]
   },
   {
@@ -149,6 +150,7 @@ const calculateDiscountedPrice = (price) => {
       { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: true },
       { text: 'অ্যাপ্রুভাল ও ভেরিফাই সিস্টেম', included: true },
       { text: 'রিজার্ভেশন ও বুকিং ব্যবস্থা', included: true },
+      { text: 'ফুয়েল ইনটেলিজেন্স', included: true },
     ]
   },
 ]
@@ -214,7 +216,7 @@ const calculateDiscountedPrice = (price) => {
               // period={plan.period}
               badge={badge}
               price={discountedPrice}
-              period={billingCycle === "monthly" ? "মাস" : billingCycle === "halfYearly" ? "৬ মাস" : "১ বছর"}
+              period={billingCycle === "monthly" ? "মাস" : billingCycle === "halfYearly" ? "মাস" : "মাস"}
               features={plan.features}
               isPopular={plan.isPopular}
               buttonText={plan.buttonText}
