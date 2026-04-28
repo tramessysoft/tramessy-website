@@ -1,11 +1,16 @@
-import { aboutContent } from "../../data/about-data"
+import { getAboutContent } from "../../data/about-data"
 import { useInView } from "../../shared/hooks/UseInView"
 // import tramessyTeam from "../../assets/image/team-tramessy.jpg"
 import tramessyTeam from "../../assets/image/team.jpg"
+import { useTranslation } from "react-i18next"
 
 const AboutTramessySection = () => {
   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const { title, paragraphs, image } = aboutContent.aboutTramessy
+  const { t } = useTranslation();
+
+  const aboutContent = getAboutContent(t);
+
+  const { title, paragraphs } = aboutContent.aboutTramessy;
 
   return (
     <section

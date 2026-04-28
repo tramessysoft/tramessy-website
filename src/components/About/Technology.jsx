@@ -1,12 +1,15 @@
 
 import { CheckCircle } from "lucide-react"
 import { useInView } from "../../shared/hooks/UseInView"
-import { aboutContent } from "../../data/about-data"
+import { getAboutContent } from "../../data/about-data"
 import technology from "../../assets/image/code-technology.jpg"
+import { useTranslation } from "react-i18next"
 
 const TechnologySection = () => {
   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const { title, paragraph, list, image } = aboutContent.technology
+   const { t } = useTranslation();  
+    const aboutContent = getAboutContent(t);
+  const { title, paragraph, list} = aboutContent.technology
 
   return (
     <section ref={sectionRef} className="w-full py-16 bg-white text-gray-800">

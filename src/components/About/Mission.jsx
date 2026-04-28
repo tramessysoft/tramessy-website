@@ -1,11 +1,15 @@
-import { aboutContent } from "../../data/about-data"
+import { getAboutContent } from "../../data/about-data"
 import { useInView } from "../../shared/hooks/UseInView"
 import missionImg from "../../assets/image/planning.jpg"
+import { useTranslation } from "react-i18next"
 
 
 const MissionSection = () => {
   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const { title, paragraph, image } = aboutContent.mission
+   const { t } = useTranslation();
+  
+    const aboutContent = getAboutContent(t);
+  const { title, paragraph } = aboutContent.mission
 
   return (
     <section ref={sectionRef} className="w-full py-16 bg-section-bg-light text-gray-800">

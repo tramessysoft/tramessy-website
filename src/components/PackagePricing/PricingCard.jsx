@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { Check } from "lucide-react";
 import { useInView } from "../../shared/hooks/UseInView";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PricingCard = ({ 
   title, 
@@ -16,7 +17,9 @@ const PricingCard = ({
   isSectionInView,
   badge
 }) => {
+  const {t} = useTranslation();
   return (
+    
     <div className="relative">
       {badge && (
         // <span className="absolute top-4 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded">
@@ -35,7 +38,7 @@ const PricingCard = ({
     } ${isSectionInView ? "animate-fade-up" : "opacity-0"}`}>
       {isPopular && (
         <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-primary to-teal-600 text-white text-center py-2 text-sm font-semibold">
-          সবচেয়ে জনপ্রিয়
+          {t('pricing.popular')}
         </div>
       )}
       
@@ -55,8 +58,8 @@ const PricingCard = ({
         )}
         
         <div className="mt-4">
-          <span className="text-4xl font-bold text-gray-900">{price}৳</span>
-          <span className="text-gray-600 ml-1">/ {period}</span>
+          <span className="text-4xl font-bold text-gray-900">{price}</span>
+          <span className="text-gray-600 ml-1"> {period}</span>
         </div>
       </div>
       

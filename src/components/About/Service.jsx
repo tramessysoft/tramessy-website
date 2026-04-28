@@ -1,12 +1,16 @@
 
 import { CheckCircle } from "lucide-react"
-import { aboutContent } from "../../data/about-data"
+import { getAboutContent } from "../../data/about-data"
 import { useInView } from "../../shared/hooks/UseInView"
 import service from "../../assets/image/service-tramessy.jpeg"
+import { useTranslation } from "react-i18next"
 
 const ServicesSection = () => {
   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const { title, paragraph, list, image } = aboutContent.services
+   const { t } = useTranslation();
+    const aboutContent = getAboutContent(t);
+  const { title, paragraph, list } = aboutContent.services
+  
 
   return (
     <section id="service" ref={sectionRef} className="w-full py-16 bg-section-bg-light text-gray-800">

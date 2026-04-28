@@ -1,9 +1,13 @@
-import { aboutContent } from "../../data/about-data"
+import {  getAboutContent } from "../../data/about-data"
 import { useInView } from "../../shared/hooks/UseInView"
 import vissionimg from "../../assets/image/business-man.jpg"
+import { useTranslation } from "react-i18next"
 const VisionSection = () => {
   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const { title, paragraph, image } = aboutContent.vision
+   const { t } = useTranslation();
+  
+    const aboutContent = getAboutContent(t);
+  const { title, paragraph} = aboutContent.vision
 
   return (
     <section ref={sectionRef} className="w-full py-16 bg-white text-gray-800">

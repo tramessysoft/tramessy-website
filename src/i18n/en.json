@@ -1,0 +1,460 @@
+{
+  "hero": {
+    "title": "Your transport business will now be 100% digital, controlled, and profitable",
+    "description": "Tramessy is a modern software that helps manage booking, accounts, driver performance, maintenance, and due collection digitally for trucks, buses, rent-a-car, and corporate fleets.",
+    "cta": "Demo Book"
+  },
+  "business_types": {
+    "title": "Suitable for all types of transport businesses",
+    "truck": "Truck / Covered Van",
+    "rent_car": "Rent a Car",
+    "bus": "Bus Operator",
+    "corporate": "Corporate Fleet"
+  },
+  "features": {
+    "vehicle_driver": "Vehicle & Driver Management",
+    "booking_trip": "Booking & Trip Management",
+    "vehicle_management": "Vehicle Management",
+    "income_expense": "Income & Expense Management",
+    "dues_payment": "Dues & Payment Tracking",
+    "income_bill" : "Income-Expense & Billing System",
+    "fuel_expense" : "Fuel & Expense Tracking",
+    "dues_management" : "Dues & Payment Management",
+    "distribution_delivery": "Distribution & Cargo Delivery",
+    "maintenance": "Servicing & Parts Replacement",
+    "reporting": "Reporting & Analytics",
+    "multi_user_location_support": "Multi-User & Multi-Location Support",
+    "module_customization": "Module-Based Customization",
+    "data_security": "Data Security & Backup",
+    "trip_wise_income": "Trip-wise Income",
+    "customer_invoice": "Customer Invoice & Billing",
+    "expense_module": "Expense Module (Expense Tracking)",
+    "driver_payment": "Driver & Vehicle Owner Payment System",
+    "monthly_yearly_reporting": "Monthly/Yearly Reporting",
+    "custom_cashflow_report": "Custom Cashflow Report",
+    "dues_tracking_reminders": "Due Tracking & Reminders",
+      "description_featrues_page": {
+  "Booking & Trip Management": "Online and offline booking entry, trip creation, driver/vehicle assignment, scheduling, pickup-drop locations, cargo type, and trip status tracking (Planned, Running, Completed). Suitable for rent-a-car, truck, bus, and distribution businesses.",
+
+  "Driver Management": "Driver information management, license and rating storage, driving history, trip performance tracking, salary, advance, and commission management. Suitable for all sectors.",
+
+  "Vehicle Management": "Vehicle registration, fitness, insurance tracking, vehicle-type filtering (bus, car, truck), service history, and maintenance alerts. Suitable for all sectors.",
+
+  "Income-Expense & Billing System": "Rental income tracking, trip-based earnings, expense entry (fuel, toll, workshop), customer invoice and receipt generation. Suitable for all sectors.",
+
+  "Fuel & Expense Tracking": "Per-trip fuel cost entry, tire, parts, toll and other expenses tracking, cost per kilometer/trip analysis. Suitable for truck, bus, and rent-a-car businesses.",
+
+  "Dues & Payment Management": "Customer dues, driver payable tracking, automatic reminders (SMS/WhatsApp), payment status: Paid, Partial, Due. Suitable for all sectors.",
+
+  "Distribution & Cargo Delivery": "Order-based cargo delivery tracking, parcel and inventory management, delivery confirmation, multi-drop route planning.",
+
+  "Reporting & Analytics": "Monthly income, expense, and profit reports, driver and vehicle performance reports, customer trip history and utilization analysis.",
+
+  "Notifications & Reminders": "Trip status updates, payment dues, fitness expiry alerts, WhatsApp/SMS/Email notifications, manual and automated reminder system.",
+  "Multi-User & Multi-Location Support": "Multiple user roles such as Owner, Manager, and Accountant, branch-wise reporting and vehicle management, and role-based access control.",
+
+  "Module-Based Customization": "Enable or disable features based on business needs, separate modules for rent-a-car, trucking, bus services, and distribution, and custom feature additions based on client requirements.",
+
+  "Data Security & Backup": "Cloud-based backup, user-based permissions, encryption, and secure server infrastructure.",
+
+  "Trip-wise Income": "Income entry based on each booking or trip. Rent-a-car: time-based or daily rental. Truck/Distribution: per kg, per trip, or per kilometer rates. Bus: passenger-based and route-based fare calculation.",
+
+  "Customer Invoice & Billing": "Automatic invoice generation, ability to combine multiple bookings into a single invoice, discount, tax, due and payment calculation, and professional receipt and bill print/download options.",
+
+  "Expense Module (Expense Tracking)": "Expense categories include fuel, toll/bridge, driver expenses, maintenance, spare parts, license/tax, and office/admin expenses. Supports trip-wise or monthly expense entries.",
+
+  "Driver & Vehicle Owner Payment System": "Driver commission calculation (per trip, percentage, bonus), vehicle owner rental payments, advance and due balance tracking, payment history, and receipt system.",
+
+  "Monthly/Yearly Reporting": "Trip-wise income vs expense comparison (Profit & Loss), monthly and custom date range reports, vehicle-wise profit/loss analysis, and customer-wise income reports.",
+
+  "Custom Cashflow Report": "Total income vs total expenses, cash in/cash out tracking, and balance sheet-style reporting.",
+
+  "Due Tracking & Reminders": "Customer due list and reports, driver/owner payable reports, and automated SMS/WhatsApp reminder system."
+
+},
+    "user_management": "User Management & Access Control",
+    "customer_management": "Customer & Dealer Management",
+    "billing": "Billing",
+    "title" : "Suitable for all types of transport businesses",
+    "sub-title" : "Whatever your transport business is, Tramessy is here to help you manage your operations digitally, quickly, and efficiently",
+    "content_title": "Tramessy's Role and Functionality in Truck/Covered Van Business",
+    "content_text": "Tramessy software is a game-changer for the truck/covered van business. It brings transparency and efficiency to every step of the transport business, saving time and costs while increasing revenue by 20-30%.",
+    "web_portal": {
+  "title": "Features of the Tramessy Web Portal",
+  "description": "The Tramessy web portal is a modern and feature-rich system designed for transport and logistics companies, where clients, drivers, and management can view and control information in real time. Through a company-specific customized website and dashboard, you can monitor trips, drivers, vehicles, and income-expenses all in one place.",
+  "list1": "Separate login panels for clients and drivers.",
+  "list2": "Real-time trip updates and tracking system.",
+  "list3": "Automated invoice and receipt generation with download options.",
+  "list4": "Web-based reporting system (trip, balance, driver performance).",
+  "list5": "Hosting with custom domain and branding options.",
+  "list6": "Fast-loading, mobile-friendly, and SEO-optimized web portal.",
+  "list7": "User and role-based access control."
+},
+"tramessy_need": {
+  "title": "Why Tramessy is Needed",
+  "list": 
+    {
+      "title1": "Suitable for All Types of Vehicles",
+      "description1": "Manage and track rent-a-car, trucks, buses, transport, and distribution services—all from a single platform.",
+    
+      "title2": "Reduce Costs & Increase Profit",
+      "description2": "Helps reduce operational costs through trip-based income-expense analysis and expense tracking.",
+    
+      "title3": "Security & Data Backup",
+      "description3": "Cloud-based secure backup with user-based access control.",
+   
+      "title4": "Data Analysis & Reporting",
+      "description4": "Complete reporting system for drivers, vehicles, and business with real-time analytics.",
+    
+      "title5": "Notifications & Reminders",
+      "description5": "Automated and manual notifications via SMS, WhatsApp, and Email.",
+   
+      "title6": "Multi-User & Multi-Location Support",
+      "description": "Manage multiple branches and role-based users—perfect for multi-location businesses.",
+  
+      "title7": "Module-Based Customization",
+      "description7": "Enable or disable features based on business needs—customizable for rent-a-car, trucking, or bus services.",
+    
+      "title8": "Automated Billing & Invoicing",
+      "description8": "Handle rental calculations, driver payments, invoices, and receipts—all in one place."
+    }
+},
+    "rent_car": {
+      "booking_reservation": "Booking & Reservation",
+      "maintenance": "Maintenance & Servicing",
+      "gps_tracking": "GPS Tracking & Monitoring",
+      "crm": "Customer Relationship Management (CRM)",
+      "driver_management": "Driver Management",
+      "financial_management": "Financial Management & Billing",
+      "user_management": "User Management & Access Control",
+      "settings_configuration": "Settings & Configuration",
+      "notifications_reminders": "Notifications & Reminders",
+      "content_title": "Tramessy's Role and Functionality in Rent a Car Business",
+      "content_text": "An effective transport management software can transform a rent-a-car business into a modern, organized, and customer-centric enterprise, which is crucial for survival in today's competitive market."
+    },
+    "bus": {
+      "route_schedule": "Route & Schedule Management",
+      "ticket_reservation": "Ticket & Reservation Management",
+      "fleet_management": "Fleet Management",
+      "maintenance": "Maintenance & Servicing Management",
+      "driver_staff_management": "Driver & Staff Management",
+      "financial_management": "Financial Management & Billing",
+      "passenger_data_analytics": "Passenger Data Analytics",
+      "customer_relationship_management": "Customer Relationship Management",
+      "legal_compliance_documentation": "Legal Compliance & Documentation",
+      "content_title": "Tramessy's Role and Functionality in Bus Operator Business",
+      "content_text": "A bus business, where passenger transport is a key component, benefits from a transport management software (TMS) that is essential for its operation. This software helps streamline complex processes, making them more efficient and profitable. In the bus industry, the primary role of TMS is to create an integrated platform that manages bus fleets, routes, schedules, drivers, passengers, and financial transactions digitally. It reduces errors, time wastage, and inconsistencies associated with manual processes."
+    },
+    "corporate": {
+      "fleet_management": "Fleet and Asset Management",
+      "driver_management": "Driver Management",
+      "maintenance_management": "Maintenance Management",
+      "fuel_management": "Fuel Management",
+      "compliance_management": "Compliance and Regulation",
+      "digital_pod": "Digital POD",
+      "reporting_analytics": "Financial & Reporting",
+      "report": "Reporting & Analytics",
+      "route_planning_optimization": "Route Planning & Optimization",
+      "content_title": "Tramessy's Role and Functionality in Corporate Fleet or Distribution Business",
+      "content_text": "In both corporate fleet (Corporate Fleet) and distribution (Distribution) sectors, the role of transport management software (TMS) is crucial. These two sectors are heavily reliant on transport management for the seamless operation of their products or services. TMS helps streamline these processes, making them more efficient and profitable."
+    }
+  },
+  "why_choose": {
+    "title": "Why Choose Tramessy?",
+    "description": "Tramessy is a modern cloud-based transport management software that helps manage bus, truck, rent-a-car, courier, or SME transport businesses easily and effectively. It is designed in such a way that you can monitor and control your business from anywhere at any time using your mobile or computer. With its user-friendly interface and automated reporting features, anyone can easily use it even with less technical knowledge."
+  },
+  "benefits": {
+    "cloud": "Cloud-based software",
+    "Cloud_title": "Tramessy is a cloud-based software, making it accessible and secure from any location. Even if your computer or mobile device is damaged, your data remains safe and can be recovered at any time.",
+    "affordable": "Affordable",
+    "affordable_title": "Tramessy offers a cost-effective subscription model, making it accessible and economically beneficial for transport businesses of all sizes.",
+    "easy": "Easy to use",
+    "easy_title": "Tramessy is designed to be quickly understood and operated by new users without training. Each module is organized in a simple and effective way.",
+    "migration": "Data migration",
+    "migration_title": "Your current transport data such as invoices, customers, income-expense records, booking history etc. can be easily migrated from other software or Excel to Tramessy.",
+    "support": "Customer support",
+    "support_title": "Tramessy has a 24/7 dedicated support team. If you encounter any issues, our team will provide quick assistance via phone, WhatsApp, or video call.",
+    "updates": "Lifetime updates",
+    "updates_title": "Our technical team regularly provides new features and security updates to keep Tramessy aligned with future technology — which you can access without any additional cost.",
+    "security": "Advanced data security",
+    "security_title": "Tramessy uses modern encryption and backup systems to ensure your data security. Your company's information will be kept 100% secure.",
+    "training": "Training & video tutorials",
+    "training_title": "New users can benefit from free training, guidelines, and video tutorials to easily start using the software."
+  },
+  "clients": {
+      "title": "The organizations in Bangladesh that regularly",
+      "title_2ndpart": "use Tramessy for managing their operations.",
+        "brand": "Tramessy",
+    "list": [
+      "Truck Seba",
+      "HK Logistics",
+      "Laksham Poribohon",
+      "Opu Enterprise",
+      "Parkline",
+      "Asif International",
+      "AJ Enterprise",
+      "SLS",
+      "Rony Transport",
+      "Nalitabari"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Insights into the key aspects important for our customers, which help them understand our services",
+"subtitle_2ndpart": "and assist them in learning more about our customer support and assistance.",
+     "questions": [
+  {
+    "question": "What is Tramessy?",
+    "answer": "Tramessy is an advanced Transport Management System (TMS) that helps businesses track, manage, and optimize logistics operations, fuel costs, vehicle performance, and route planning."
+  },
+  {
+    "question": "Who can use Tramessy?",
+    "answer": "Tramessy is specifically designed for transport companies, logistics providers, fleet managers, corporate businesses, and distributors who need an efficient digital solution for transport management."
+  },
+  {
+    "question": "How does Tramessy improve transport efficiency?",
+    "answer": "Tramessy reduces costs and improves delivery time by optimizing route planning, fuel management, vehicle tracking, and trip scheduling."
+  },
+  {
+    "question": "What features does Tramessy offer?",
+    "answer": "Live GPS Tracking – Monitor vehicles in real time. Fuel Management – Track fuel usage and prevent misuse. AI-powered Route Optimization – Reduce delivery time and fuel cost. Driver Performance Monitoring – Analyze trip efficiency. Automated Trip Scheduling – Improve logistics planning. Smart Expense and Revenue Reports – Detailed cost analysis."
+  },
+  {
+    "question": "Can Tramessy integrate with other software?",
+    "answer": "Yes! Tramessy can integrate with ERP systems, accounting software, fuel card systems, and GPS tracking devices."
+  },
+  {
+    "question": "Is Tramessy available as a mobile app?",
+    "answer": "Yes, Tramessy offers a mobile-friendly interface and works like an app for real-time access."
+  },
+  {
+    "question": "Is training provided?",
+    "answer": "Yes, we provide free training. Our expert team will guide you through complete software usage training."
+  },
+  {
+    "question": "Is there a refund policy?",
+    "answer": "We offer a 30-day money-back guarantee. If you are not satisfied, we will refund your payment."
+  }
+]
+  },
+  "testimonials": {
+    "title": "Customer Experiences",
+     "description": "Our valued customers who have shared their experiences. Learn how our software has improved",
+    "description_2ndpart": "their business operations. Helping them move forward and succeed.",
+    "list": {
+  "review1": "Earlier, we used to maintain daily income, expenses, and driver travel duties in separate notebooks. After using the Tramessy software, we now get all the information in a single system. The best part is that automatic reports are generated with just one click and can also be downloaded. It includes everything needed for how transport businesses in our country operate—management, duty assignment, challan, bill generation, and more—all built into the system.",
+  
+  "review2": "After using Tramessy software, our transport operations have become much faster. We can access vehicle booking, income-expense reports—all in one click. It is easy to use, and the support team is excellent. For those who want to manage project-based transport businesses, Tramessy is an outstanding solution.",
+  
+  "review3": "Earlier, we used to maintain daily income, expenses, and driver travel duties in separate notebooks. After using the Tramessy software, we now get all the information in a single system. The best part is that automatic reports are generated with just one click and can also be downloaded. It includes everything needed for how transport businesses in our country operate—management, duty assignment, challan, bill generation, and more—all built into the system.",
+  
+  "review4": "After using Tramessy software, our transport operations have become much faster. We can access vehicle booking, income-expense reports—all in one click. It is easy to use, and the support team is excellent. For those who want to manage project-based transport businesses, Tramessy is an outstanding solution.",
+  
+  "review5": "I run a rent-a-car business. Earlier it was very difficult to keep track—where each car is, how much income, how much expense, everything was hard to remember. Now I use Tramessy. Everything is available in one place. Booking, drivers, income-expense—all records are now visible on my mobile. It has made things much easier. Thanks to the Tramessy team!",
+  
+  "review6": "After using Tramessy, my way of working has completely changed. Earlier, it used to take a lot of time to prepare accounts and reports, but now everything is done within a few clicks. In short, Tramessy is my biggest support in managing my business!",
+  
+  "review7": "I am truly impressed with Tramessy. Its simple interface and smart features have greatly increased my team’s productivity. Now, managing every aspect of the business is much easier and time-saving!",
+  
+  "review8": "Tramessy is truly an amazing software. Everything is organized in such a simple and smart way that managing my business has become much faster and hassle-free!"
+}
+  },
+  "footer": {
+    "title": "Tramessy software is designed with the modernization of the transport business in mind, allowing any transport business owner to easily and quickly manage their daily operations.",
+    "hotline": "09666700722",
+    "email": "info@tramessy.com",
+    "phone": "+880 1627-355382",
+    "address": "House-18, Road-3, Nikunja-2, Khilkhet, Dhaka, Bangladesh",
+    "Quick_links": "Quick Links",
+    "Company": {
+      "Company": "Company",
+      "about_company": "About Company",
+      "services": "Services",
+      "contact": "Contact",
+      "partners": "Partners"
+    },
+    "Contact": "Contact"
+  },
+
+  "product": {
+    "name": "Tramessy Transport Management Software",
+    "sections": {
+      "booking_trip_management": {
+        "title": "Booking & Trip Management",
+        "features": [
+          "Online and offline booking",
+          "Trip creation and management",
+          "Driver and vehicle assignment",
+          "Trip status tracking"
+        ]
+      },
+      "driver_management": {
+        "title": "Driver Management",
+        "features": [
+          "Driver profile management",
+          "License and documents tracking",
+          "Performance tracking",
+          "Salary, advance and commission management"
+        ]
+      }
+    }
+  },
+
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Packages and Pricing",
+    "reviews": "Reviews",
+    "about": "About Us",
+    "contact": "Contact",
+    "demo_book": "Demo Book"
+  },
+
+  "about": {
+    "title": "About Tramessy",
+    "description":{
+  "text1": "The Tramessy software has been designed with the goal of modernizing Bangladesh’s transport sector. It is built in such a way that transport companies, bus owners, truck drivers, and rent-a-car service providers can easily manage their daily operations in less time.",
+
+  "text2": "We believe that although digital technology has touched almost every sector, the transport industry in the country still lacks significant technological advancement. To bridge this gap and ensure an efficient, time-saving, and data-driven transport management system, BMS Tech Logistics Ltd. has introduced the Tramessy software. Currently, hundreds of transport businesses across the country are benefiting through Tramessy.",
+
+  "text3": "We envision a smart transformation in the transport sector—where there are no paper records, but instead digital reporting, real-time monitoring, and data-based decision-making. Tramessy is the companion on this journey of change."
+},
+    "vision": {
+      "title": "Vision",
+      "description": "Our vision is to establish Tramessy as the leading transport management software in the country, which will one day be recognized in the international market as a proud technological innovation from Bangladesh. We aim for every transport business in the country to manage their operations smartly through Tramessy by 2027. We want them to maximize the use of their time, money, and effort to build a sustainable, transparent, and data-driven transport system."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Our mission is to modernize, streamline, and automate the country’s transport system. We are committed to simplifying communication between transport owners, drivers, and customers, and bringing all operations such as vehicle management, route management, invoicing, and reporting into a single platform. With the Tramessy software, transport business operations will become more organized, faster, and more profitable."
+    },
+    "company": "BMS Tech Logistics Ltd."
+  },
+
+  "services": {
+    "title": "Company Services",
+    "paragraph": "BMS Tech Logistics Ltd. provides the following services to ensure the digital transformation of the transport sector:",
+    "list": [
+      "Subscription-based Transport Management Software (Tramessy)",
+      "Custom Feature Development",
+      "Software Integration (Payment, SMS, GPS, API)",
+      "Mobile Apps and Web Portal Services",
+      "Training and Customer Support(24/7)"
+    ]
+  },
+
+  "technology": {
+    "title": "Technology We Use",
+    "description": "Tramessy development team uses modern technology to build a scalable, secure, and user-friendly software. We use:",
+    "languages": "Programming Languages: PHP, JavaScript, TypeScript",
+    "frontend": "Web and Mobile Frameworks: React.js, Vue.js, Flutter",
+    "backend": "Backend and APIs: RESTful APIs, Laravel, Node.js",
+    "hosting": "Hosting and Cloud: AWS, Linux-based deployment",
+    "testing": "Testing and QA: Manual + Automated Testing",
+    "project_management": "Project Management: Jira, Trello, GitHub Actions",
+    "database": "Database: MySQL, PostgreSQL"
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "description": "For any questions or assistance, we are always ready to help.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Address",
+    "address": "House-18(Ground Floor), Road-3, Nikunja-2, Khilkhet, Dhaka, Bangladesh",
+    "time": "Time Schedule",
+    "working_hours": "Saturday - Thursday: 9:00 AM - 6:30 PM 24/7 Online Support",
+      "formDescription": "Send us your message and we will get back to you soon",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "phone": "Phone No",
+        "phonePlaceholder": "+880 1XXXXXXXXX",
+        "company": "Company Name",
+        "companyPlaceholder": "Your Company Name",
+        "message": "Message",
+        "messagePlaceholder": "Your detailed message here...",
+        "submit": "Send Message",
+        "formFooter" : "We will respond to your message within 24 hours on business days."
+      }
+  },
+
+  "legal": {
+    "trade_license": "TRAD/DNCC/009194/2022",
+    "tin": "341194158241",
+    "vat": "0050990580101"
+  },
+
+  "pricing": {
+    "bannar":"Packages and Pricing",
+    "title": "Our Pricing Plans",
+    "popular": "Most Popular",
+    "offer": {
+  "halfYearly": "10% Special Offer",
+  "yearly": "20% Special Offer"
+},
+    "tab":{
+      "monthly": "Monthly Payment",
+      "halfYearly": "6 Month Payment(10% Discount)",
+      "yearly": "Yearly Payment(20% Discount)"
+    },
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "price": "1499",
+        "period": "BDT / month",
+        "buttonText": "Buy Basic Plan",
+        "description" : "Small transport business, new entrepreneurs, startups",
+        "list1": "Management of 4–7 vehicles",
+        "list13": "Multi-user access (up to 2 users)",
+        "list14": "Mobile and desktop platform access",
+        "list15": "Salary and commission calculation"
+      },
+      "standard": {
+        "name": "Standard",
+        "price": "2499",
+        "buttonText": "Buy Standard Plan",
+        "description" : "Medium-sized transport business",
+        "list1": "Management of 8–12 vehicles",
+        "list13": "Multi-user access (up to 3 users)"
+
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "4999",
+        "buttonText": "Buy Pro Plan",
+        "description" : "Large transport business",
+        "list1": "Management of 13–20 vehicles",
+        "list13": "Multi-user access (up to 5 users)"
+
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "7999",
+        "buttonText": "Buy Premium Plan",
+        "description" : "Large transport business, corporate clients",
+  "list1": "Management of 21–50 vehicles",
+  "list2": "Trip accounting and monitoring",
+  "list3": "Road expense tracking",
+  "list4": "Fuel management",
+  "list5": "Servicing and maintenance",
+  "list6": "Vehicle installment and payment tracking",
+  "list7": "Parts and inventory management",
+  "list8": "Digital bill and challan generation",
+  "list9": "Voucher and receipt generation",
+  "list10": "Receivables tracking and management",
+  "list11": "SMS/Email notification system",
+  "list12": "GPS tracking and API integration",
+  "list13": "Multi-user access (up to 10 users)",
+  "list14": "Salary and commission calculation",
+  "list15": "Balance statement and cash flow reports",
+  "list16": "Dedicated account manager and live support",
+  "list17": "Approval and verification system",
+  "list18": "Reservation and booking system",
+  "list19": "Fuel intelligence",
+  "list20": "Custom feature development support"
+
+      }
+    }
+  }
+}

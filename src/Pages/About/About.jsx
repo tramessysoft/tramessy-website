@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import AboutTramessySection from "../../components/About/AboutTramessySection";
 import MissionSection from "../../components/About/Mission";
 import ServicesSection from "../../components/About/Service";
@@ -6,13 +7,14 @@ import VisionSection from "../../components/About/Vission";
 import PageHero from "../../components/helpingComp/PageHero";
 
 const About = () => {
+    const { t } = useTranslation();
     const breadcrumbs = [
-    { label: "হোম", href: "/" },
-    { label: "আমাদের সম্পর্কে" }, 
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about") }, 
   ]
     return (
         <div>
-            <PageHero title={"আমাদের সম্পর্কে"} breadcrumbs={breadcrumbs}/>
+            <PageHero title={t("nav.about")} breadcrumbs={breadcrumbs}/>
             <AboutTramessySection/>
             <MissionSection/>
             <VisionSection/>

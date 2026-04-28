@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import PageHero from '../../components/helpingComp/PageHero';
 import { useInView } from '../../shared/hooks/UseInView';
+import { useTranslation } from 'react-i18next';
 
 
 const initialFormState = {
@@ -111,25 +112,25 @@ ${formData.message}
 
     window.open(whatsappURL, "_blank");
   };
-
+const { t } = useTranslation()
   // page hero
   const breadcrumbs = [
-    { label: "হোম", href: "/" },
-    { label: "যোগাযোগ" },
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.contact") },
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       {/*  Header */}
-      <PageHero title={"যোগাযোগ"} breadcrumbs={breadcrumbs} />
+      <PageHero title={t("nav.contact")} breadcrumbs={breadcrumbs} />
       {/* ✅ Main Section */}
       <main className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
         {/* 🔹 Contact Info */}
         <section ref={infoRef} className="space-y-8">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">আমাদের সাথে যোগাযোগ করুন</h2>
+            <h2 className="text-2xl font-bold text-gray-900">{t("contact.title")}</h2>
             <p className="text-gray-600 text-sm">
-              আপনার যেকোনো প্রশ্ন বা সহায়তার জন্য আমরা সর্বদা প্রস্তুত।
+             {t("contact.description")}
             </p>
           </div>
 
@@ -137,28 +138,27 @@ ${formData.message}
           {[
             {
               icon: <Phone className="h-6 w-6 text-blue-600" />,
-              label: 'ফোন',
+              label: t("contact.phone"),
               details: ['09666-700722', '+880 1627-355382'],
               bg: 'bg-blue-100',
             },
             {
               icon: <Mail className="h-6 w-6 text-green-600" />,
-              label: 'ইমেইল',
+              label: t("contact.email"),
               details: ['support@tramessy.com', 'info@tramessy.com'],
               bg: 'bg-green-100',
             },
             {
               icon: <MapPin className="h-6 w-6 text-purple-600" />,
-              label: 'ঠিকানা',
-              details: ['হাউস-১৮ (গ্রাউন্ড ফ্লোর), রোড-৩, নিকুঞ্জ-২, খিলক্ষেত, ঢাকা, বাংলাদেশ'],
+              label: t("contact.location"),
+              details: [t('contact.address')],
               bg: 'bg-purple-100',
             },
             {
               icon: <Clock className="h-6 w-6 text-orange-600" />,
-              label: 'সময়সূচি',
+              label: t("contact.time"),
               details: [
-                'শনিবার - বৃহস্পতিবার: ৯:০০ - ১৮:৩০',
-                '২৪/৭ অনলাইন সাপোর্ট',
+                t('contact.working_hours'),
               ],
               bg: 'bg-orange-100',
             },
@@ -215,10 +215,10 @@ ${formData.message}
               <MessageCircle className="h-8 w-8 text-blue-600" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              আমাদের সাথে যোগাযোগ করুন
+              {t("contact.title")}
             </h3>
             <p className="text-gray-600 text-xs">
-              আপনার বার্তা পাঠান এবং আমরা শীঘ্রই যোগাযোগ করব
+              {t("contact.formDescription")}
             </p>
           </div>
 
@@ -229,42 +229,42 @@ ${formData.message}
             {/* Name Row */}
             <div className="">
               <Input
-                label="নাম"
+                label={t("contact.form.name")}
                 name="firstName"
                 required
                 value={formData.firstName}
-                placeholder="আপনার নাম লিখুন"
+                placeholder={t("contact.form.namePlaceholder")}
                 onChange={handleInputChange}
               />
             </div>
 
             {/* Email + Phone */}
             <Input
-              label="ইমেইল"
+              label={t("contact.email")}
               name="email"
               type="email"
               required
               value={formData.email}
-              placeholder="আপনার ইমেইল ঠিকানা"
+              placeholder={t("contact.form.emailPlaceholder")}
               onChange={handleInputChange}
             />
 
             <Input
-              label="ফোন নম্বর"
+              label={t("contact.form.phone")}
               name="phone"
               type="tel"
               required
               value={formData.phone}
-              placeholder="+৮৮০ ১৭XX XXXXXX"
+              placeholder={t("contact.form.phonePlaceholder")}
               onChange={handleInputChange}
             />
 
             {/* Company + Subject */}
             <Input
-              label="প্রতিষ্ঠানের নাম"
+              label={t("contact.form.company")}
               name="company"
               value={formData.company}
-              placeholder="আপনার প্রতিষ্ঠানের নাম"
+              placeholder={t("contact.form.companyPlaceholder")}
               onChange={handleInputChange}
             />
 
@@ -274,7 +274,7 @@ ${formData.message}
                 htmlFor="message"
                 className="block text-sm font-medium text-gray-700"
               >
-                বার্তা *
+                {t("contact.form.message")} *
               </label>
               <textarea
                 id="message"
@@ -283,7 +283,7 @@ ${formData.message}
                 rows={5}
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder="আপনার বিস্তারিত বার্তা লিখুন..."
+                placeholder={t("contact.form.messagePlaceholder")}
                 className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -294,12 +294,12 @@ ${formData.message}
               className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-primary hover:to-primary/40 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-[1.02] flex items-center justify-center"
             >
               <Send className="mr-2 h-5 w-5" />
-              বার্তা পাঠান
+              {t("contact.form.submit")}
             </button>
           </form>
 
           <div className="mt-6 text-center text-sm text-gray-500">
-            আমরা সাধারণত ২৪ ঘন্টার মধ্যে উত্তর দিয়ে থাকি
+            {t("contact.form.formFooter")}
           </div>
         </section>
       </main>

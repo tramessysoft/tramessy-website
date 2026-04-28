@@ -183,18 +183,18 @@
 
 // export default Banner;
 
-
-
-import { ArrowDown } from "lucide-react"
-import dekstopImage from "../../assets/image/truck-seba-dash-dekstop.png"
-import smallImage from "../../assets/image/mobile.png"
+import { ArrowDown } from "lucide-react";
+import dekstopImage from "../../assets/image/truck-seba-dash-dekstop.png";
+import smallImage from "../../assets/image/mobile.png";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "../../shared/hooks/UseInView";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Banner() {
+  const { t } = useTranslation();
   const imageRef = useRef(null);
-   const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
+  const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -212,20 +212,20 @@ export default function Banner() {
 
   // hero content
   const heroContent = {
-    title: "ট্রান্সপোর্ট ম্যানেজমেন্ট এর জন্য একটি নির্ভরযোগ্য সফটওয়্যার",
-    description: `ট্র্যামেসি একটি আধুনিক সফটওয়্যার, যা ট্রাক, বাস, রেন্ট-এ-কার, করপোরেট ফ্লিটসহ যেকোনো বাণিজ্যিক পরিবহন ব্যবসার বুকিং, হিসাব, ড্রাইভার পারফরম্যান্স, মেইনটেনেন্স ও বকেয়া আদায় ডিজিটালি পরিচালনায় সহায়তা করে। এটি সময় ও খরচ বাঁচিয়ে ব্যবসাকে লাভজনক করে তোলে। `,
-    ctaText: "ডেমো রিকুয়েস্ট করুন",
+    title: t("hero.title"),
+    description: t("hero.description"),
+    ctaText: t("hero.cta"),
     mainImage: dekstopImage,
-    smallImage: smallImage
-  }
+    smallImage: smallImage,
+  };
 
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
       behavior: "smooth",
-    })
-  }
-// grid lg:grid-cols-2 gap-12 lg:gap-20
+    });
+  };
+  // grid lg:grid-cols-2 gap-12 lg:gap-20
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-20">
       {/* Gradient Background */}
@@ -234,22 +234,42 @@ export default function Banner() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row gap-10 md:gap-20 justify-between items-center">
           {/* Left Content */}
-          <div ref={sectionRef} className="text-white space-y-8 animate-fade-in-up md:w-[50%]">
-            <h1 className={`text-2xl lg:text-4xl font-bold leading-tight ${isSectionInView ? "animate-fade-in-left" : "opacity-0"}`} style={{ animationDelay: isSectionInView ? "0.2s" : "0s" }}>{heroContent.title}</h1>
+          <div
+            ref={sectionRef}
+            className="text-white space-y-8 animate-fade-in-up md:w-[50%]"
+          >
+            <h1
+              className={`text-2xl lg:text-4xl font-bold leading-tight ${isSectionInView ? "animate-fade-in-left" : "opacity-0"}`}
+              style={{ animationDelay: isSectionInView ? "0.2s" : "0s" }}
+            >
+              {heroContent.title}
+            </h1>
 
-            <p className={` text-sm lg:text-md text-white/90 leading-relaxed ${isSectionInView ? "animate-fade-in-right" : "opacity-0"}`} style={{ animationDelay: isSectionInView ? "0.2s" : "0s" }}>{heroContent.description}</p>
+            <p
+              className={` text-sm lg:text-md text-white/90 leading-relaxed ${isSectionInView ? "animate-fade-in-right" : "opacity-0"}`}
+              style={{ animationDelay: isSectionInView ? "0.2s" : "0s" }}
+            >
+              {heroContent.description}
+            </p>
 
-            <Link to="/contact-us" className="mt-6 block"><button className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg text-sm text-md font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center space-x-2 group">
-              <span>{heroContent.ctaText}</span>
-              <svg
-                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button></Link>
+            <Link to="/contact-us" className="mt-6 block">
+              <button className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-3 rounded-lg text-sm text-md font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center space-x-2 group">
+                <span>{heroContent.ctaText}</span>
+                <svg
+                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </button>
+            </Link>
           </div>
 
           {/* Right Content - Image */}
@@ -266,8 +286,14 @@ export default function Banner() {
 
               {/* Small Jumping Image */}
               <div className="absolute -bottom-12 -left-12  ">
-                <div  ref={imageRef} className={`p-4 w-36 lg:w-48 transform  animate-bounce-slow`}>
-                  <img src={heroContent.smallImage || "placeholder.svg"} alt="mobile response"/>
+                <div
+                  ref={imageRef}
+                  className={`p-4 w-36 lg:w-48 transform  animate-bounce-slow`}
+                >
+                  <img
+                    src={heroContent.smallImage || "placeholder.svg"}
+                    alt="mobile response"
+                  />
                 </div>
               </div>
 
@@ -292,7 +318,6 @@ export default function Banner() {
           <ArrowDown className="w-5 h-5 text-white" />
         </button>
       </div>
-     
     </section>
-  )
+  );
 }

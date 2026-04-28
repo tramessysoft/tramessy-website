@@ -1,174 +1,209 @@
-
-import { BarChart3, Check, Crown, Settings, Truck } from "lucide-react"
+import { BarChart3, Check, Crown, Settings, Truck } from "lucide-react";
 
 // import { pricingPlans } from "../../data/pricing-data"
-import { useInView } from "../../shared/hooks/UseInView"
-import Button from "../../components/helpingComp/Button"
-import PageHero from "../../components/helpingComp/PageHero"
-import PricingCard from "../../components/PackagePricing/PricingCard"
-import { useState } from "react"
+import { useInView } from "../../shared/hooks/UseInView";
+import Button from "../../components/helpingComp/Button";
+import PageHero from "../../components/helpingComp/PageHero";
+import PricingCard from "../../components/PackagePricing/PricingCard";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 const PackagePricing = () => {
+  const { t, i18n } = useTranslation();
+  const isBangla = i18n.language === "bn";
 
-   const [billingCycle, setBillingCycle] = useState("monthly") 
+  const [billingCycle, setBillingCycle] = useState("monthly");
   // monthly | halfYearly | yearly
 
   // ইংরেজি থেকে বাংলায় নাম্বার কনভার্টার
-const toBengaliNumber = (num) => {
-  return num.toString().replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
-};
+  const toBengaliNumber = (num) => {
+    return num.toString().replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);
+  };
 
-const calculateDiscountedPrice = (price) => {
-  const basePrice = parseInt(
-    price
-      .replace(/[০-৯]/g, d => "০১২৩৪৫৬৭৮৯".indexOf(d))
-      .replace(/[^\d]/g, "")
-  )
-  let finalPrice = basePrice
+  // const calculateDiscountedPrice = (price) => {
+  //   const basePrice = parseInt(
+  //     price
+  //       .replace(/[০-৯]/g, d => "০১২৩৪৫৬৭৮৯".indexOf(d))
+  //       .replace(/[^\d]/g, "")
+  //   )
+  //   let finalPrice = basePrice
 
-  if (billingCycle === "halfYearly") finalPrice = Math.round(basePrice * 0.90) // ৭% ছাড়
-  if (billingCycle === "yearly") finalPrice = Math.round(basePrice * 0.80)     // ১০% ছাড়
+  //   if (billingCycle === "halfYearly") finalPrice = Math.round(basePrice * 0.90) // ৭% ছাড়
+  //   if (billingCycle === "yearly") finalPrice = Math.round(basePrice * 0.80)     // ১০% ছাড়
 
-  return toBengaliNumber(finalPrice)
-}
+  //   return toBengaliNumber(finalPrice)
+  // }
 
+  const calculateDiscountedPrice = (price) => {
+    const basePrice = parseInt(
+      price
+        .replace(/[০-৯]/g, (d) => "০১২৩৪৫৬৭৮৯".indexOf(d))
+        .replace(/[^\d]/g, ""),
+    );
+
+    let finalPrice = basePrice;
+
+    if (billingCycle === "halfYearly") finalPrice = Math.round(basePrice * 0.9);
+    if (billingCycle === "yearly") finalPrice = Math.round(basePrice * 0.8);
+
+    // 🔥 language based return
+    return isBangla ? toBengaliNumber(finalPrice) : finalPrice;
+  };
 
   const pricingPlans = [
-  {
-    title: 'বেসিক',
-    subtitle: 'ছোট ট্রান্সপোর্ট ব্যবসা, নতুন উদ্যোক্তা, স্টার্টআপ',
-    price: '১,৪৯৯',
-    period: 'মাস',
-    icon: <Truck className="h-6 w-6" />,
-    gradient: 'from-green-400 to-green-600',
-    buttonText: 'বেসিক প্ল্যান কিনুন',
-    features: [
-      { text: '১ থেকে ৫টি গাড়ি ম্যানেজমেন্ট', included: true },
-      { text: 'ট্রিপ হিসাব ও মনিটরিং', included: true },
-      { text: 'রোড এক্সপেন্স ট্র্যাকিং', included: true },
-      { text: 'জ্বালানি ব্যবস্থাপনা', included: true },
-      { text: 'সার্ভিসিং ও রক্ষণাবেক্ষণ', included: true },
-      { text: 'গাড়ির কিস্তি ও পেমেন্ট হিসাব', included: true },
-      { text: 'পার্টস ও স্টক ম্যানেজমেন্ট', included: true },
-      { text: 'ডিজিটাল বিল ও চালান তৈরি', included: true },
-      { text: 'ভাউচার ও রসিদ তৈরি', included: true },
-      { text: 'পাওনার হিসাব ও ট্র্যাকিং', included: true },
-      { text: 'SMS/Email নোটিফিকেশন সিস্টেম', included: true },
-      { text: 'GPS ট্র্যাকিং ও API ইন্ট্রিগেশন', included: true },
-      { text: 'মাল্টি-ইউজার এক্সেস (২ জন পর্যন্ত)', included: true },
-      { text: 'বেতন ও কমিশন হিসাব', included: true },
-      { text: 'হাজিরা ও ছুটি ম্যানেজমেন্ট', included: false },
-      { text: 'ব্যালেন্স স্টেটমেন্ট ও ক্যাশফ্লো রিপোর্ট', included: false },
-      { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: false },
-    ]
-  },
-  {
-    title: 'স্ট্যান্ডার্ড',
-    subtitle: 'মাঝারি আকারের ট্রান্সপোর্ট ব্যবসা',
-    price: '২,৪৯৯',
-    period: 'মাস',
-    icon: <BarChart3 className="h-6 w-6" />,
-    gradient: 'from-blue-500 to-teal-600',
-    buttonText: 'স্ট্যান্ডার্ড প্ল্যান কিনুন',
-    isPopular: true,
-    features: [
-      { text: '৫ থেকে ১০টি গাড়ি ম্যানেজমেন্ট', included: true },
-      { text: 'ট্রিপ হিসাব ও মনিটরিং', included: true },
-      { text: 'রোড এক্সপেন্স ট্র্যাকিং', included: true },
-      { text: 'জ্বালানি ব্যবস্থাপনা', included: true },
-      { text: 'সার্ভিসিং ও রক্ষণাবেক্ষণ', included: true },
-      { text: 'গাড়ির কিস্তি ও পেমেন্ট হিসাব', included: true },
-      { text: 'পার্টস ও স্টক ম্যানেজমেন্ট', included: true },
-      { text: 'ডিজিটাল বিল ও চালান তৈরি', included: true },
-      { text: 'ভাউচার ও রসিদ তৈরি', included: true },
-      { text: 'পাওনার হিসাব ও ট্র্যাকিং', included: true },
-      { text: 'SMS/Email নোটিফিকেশন সিস্টেম', included: true },
-      { text: 'GPS ট্র্যাকিং ও API ইন্ট্রিগেশন', included: true },
-      { text: 'মাল্টি-ইউজার এক্সেস (৩ জন পর্যন্ত)', included: true },
-       { text: 'বেতন ও কমিশন হিসাব', included: true },
-      { text: 'হাজিরা ও ছুটি ম্যানেজমেন্ট', included: false },
-      { text: 'ব্যালেন্স স্টেটমেন্ট ও ক্যাশফ্লো রিপোর্ট', included: false },
-      { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: false },
-    ]
-  },
-  {
-    title: 'প্রো প্ল্যান',
-    subtitle: 'বড় আকারের ট্রান্সপোর্ট ব্যবসা',
-    price: '৪,৯৯৯',
-    period: 'মাস',
-    icon: <Crown className="h-6 w-6" />,
-    gradient: 'from-purple-500 to-pink-600',
-    buttonText: 'প্রো প্ল্যান কিনুন',
-    features: [
-      { text: '১০-২০টি গাড়ি ম্যানেজমেন্ট', included: true },
-      { text: 'ট্রিপ হিসাব ও মনিটরিং', included: true },
-      { text: 'রোড এক্সপেন্স ট্র্যাকিং', included: true },
-      { text: 'জ্বালানি ব্যবস্থাপনা', included: true },
-      { text: 'সার্ভিসিং ও রক্ষণাবেক্ষণ', included: true },
-      { text: 'গাড়ির কিস্তি ও পেমেন্ট হিসাব', included: true },
-      { text: 'পার্টস ও স্টক ম্যানেজমেন্ট', included: true },
-      { text: 'ডিজিটাল বিল ও চালান তৈরি', included: true },
-      { text: 'ভাউচার ও রসিদ তৈরি', included: true },
-      { text: 'পাওনার হিসাব ও ট্র্যাকিং', included: true },
-      { text: 'SMS/Email নোটিফিকেশন সিস্টেম', included: true },
-      { text: 'GPS ট্র্যাকিং ও API ইন্ট্রিগেশন', included: true },
-      { text: 'মাল্টি-ইউজার এক্সেস (৫ জন পর্যন্ত)', included: true },
-      { text: 'হাজিরা ও ছুটি ম্যানেজমেন্ট', included: true },
-      { text: 'বেতন ও কমিশন হিসাব', included: true },
-      { text: 'ব্যালেন্স স্টেটমেন্ট ও ক্যাশফ্লো রিপোর্ট', included: true },
-      { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: true },
-      { text: 'অ্যাপ্রুভাল ও ভেরিফাই সিস্টেম', included: true },
-      { text: 'রিজার্ভেশন ও বুকিং ব্যবস্থা', included: true },
-      { text: 'ফুয়েল ইনটেলিজেন্স', included: false },
-    ]
-  },
-  {
-    title: 'প্রিমিয়াম',
-    subtitle: 'বড় আকারের ট্রান্সপোর্ট ব্যবসা',
-    price: '৭,৯৯৯',
-    period: 'মাস',
-    icon: <Crown className="h-6 w-6" />,
-    gradient: ' from-blue-500 to-purple-600',
-    buttonText: 'প্রিমিয়াম প্ল্যান কিনুন',
-    features: [
-      { text: '২০-৫০টি গাড়ি ম্যানেজমেন্ট', included: true },
-      { text: 'ট্রিপ হিসাব ও মনিটরিং', included: true },
-      { text: 'রোড এক্সপেন্স ট্র্যাকিং', included: true },
-      { text: 'জ্বালানি ব্যবস্থাপনা', included: true },
-      { text: 'সার্ভিসিং ও রক্ষণাবেক্ষণ', included: true },
-      { text: 'গাড়ির কিস্তি ও পেমেন্ট হিসাব', included: true },
-      { text: 'পার্টস ও স্টক ম্যানেজমেন্ট', included: true },
-      { text: 'ডিজিটাল বিল ও চালান তৈরি', included: true },
-      { text: 'ভাউচার ও রসিদ তৈরি', included: true },
-      { text: 'পাওনার হিসাব ও ট্র্যাকিং', included: true },
-      { text: 'SMS/Email নোটিফিকেশন সিস্টেম', included: true },
-      { text: 'GPS ট্র্যাকিং ও API ইন্ট্রিগেশন', included: true },
-      { text: 'মাল্টি-ইউজার এক্সেস (১০ জন পর্যন্ত)', included: true },
-      { text: 'হাজিরা ও ছুটি ম্যানেজমেন্ট', included: true },
-      { text: 'বেতন ও কমিশন হিসাব', included: true },
-      { text: 'ব্যালেন্স স্টেটমেন্ট ও ক্যাশফ্লো রিপোর্ট', included: true },
-      { text: 'ডেডিকেটেড একাউন্ট ম্যানেজার ও লাইভ সাপোর্ট', included: true },
-      { text: 'অ্যাপ্রুভাল ও ভেরিফাই সিস্টেম', included: true },
-      { text: 'রিজার্ভেশন ও বুকিং ব্যবস্থা', included: true },
-      { text: 'ফুয়েল ইনটেলিজেন্স', included: true },
-    ]
-  },
-]
+    {
+      title: t("pricing.plans.basic.name"),
+      subtitle: t("pricing.plans.basic.description"),
+      price: t("pricing.plans.basic.price"),
+      period: t("pricing.plans.basic.period"),
+      icon: <Truck className="h-6 w-6" />,
+      gradient: "from-green-400 to-green-600",
+      buttonText: t("pricing.plans.basic.buttonText"),
+      features: [
+        { text: t("pricing.plans.basic.list1"), included: true },
+        { text: t("pricing.plans.premium.list2"), included: true },
+        { text: t("pricing.plans.premium.list3"), included: true },
+        { text: t("pricing.plans.premium.list4"), included: true },
+        { text: t("pricing.plans.premium.list5"), included: true },
+        { text: t("pricing.plans.premium.list6"), included: true },
+        { text: t("pricing.plans.premium.list7"), included: true },
+        { text: t("pricing.plans.premium.list8"), included: true },
+        { text: t("pricing.plans.premium.list9"), included: true },
+        { text: t("pricing.plans.premium.list10"), included: true },
+        { text: t("pricing.plans.premium.list11"), included: true },
+        { text: t("pricing.plans.premium.list12"), included: true },
+        { text: t("pricing.plans.basic.list13"), included: true },
+        { text: t("pricing.plans.basic.list14"), included: true },
+        { text: t("pricing.plans.premium.list14"), included: true },
+        { text: t("pricing.plans.premium.list15"), included: false },
+        { text: t("pricing.plans.premium.list16"), included: false },
+        { text: t("pricing.plans.premium.list17"), included: false },
+        { text: t("pricing.plans.premium.list18"), included: false },
+        { text: t("pricing.plans.premium.list19"), included: false },
+        { text: t("pricing.plans.premium.list20"), included: false },
+      ],
+    },
+    {
+      title: t("pricing.plans.standard.name"),
+      subtitle: t("pricing.plans.standard.description"),
+      price: t("pricing.plans.standard.price"),
+      period: t("pricing.plans.standard.period"),
+      icon: <BarChart3 className="h-6 w-6" />,
+      gradient: "from-blue-500 to-teal-600",
+      buttonText: t("pricing.plans.standard.buttonText"),
+      isPopular: true,
+      features: [
+        { text: t("pricing.plans.standard.list1"), included: true },
+        { text: t("pricing.plans.premium.list2"), included: true },
+        { text: t("pricing.plans.premium.list3"), included: true },
+        { text: t("pricing.plans.premium.list4"), included: true },
+        { text: t("pricing.plans.premium.list5"), included: true },
+        { text: t("pricing.plans.premium.list6"), included: true },
+        { text: t("pricing.plans.premium.list7"), included: true },
+        { text: t("pricing.plans.premium.list8"), included: true },
+        { text: t("pricing.plans.premium.list9"), included: true },
+        { text: t("pricing.plans.premium.list10"), included: true },
+        { text: t("pricing.plans.premium.list11"), included: true },
+        { text: t("pricing.plans.premium.list12"), included: true },
+        { text: t("pricing.plans.standard.list13"), included: true },
+        { text: t("pricing.plans.basic.list14"), included: true },
+        { text: t("pricing.plans.premium.list14"), included: true },
+        { text: t("pricing.plans.premium.list15"), included: false },
+        { text: t("pricing.plans.premium.list16"), included: false },
+        { text: t("pricing.plans.premium.list17"), included: false },
+        { text: t("pricing.plans.premium.list18"), included: false },
+        { text: t("pricing.plans.premium.list19"), included: false },
+        { text: t("pricing.plans.premium.list20"), included: false },
+      ],
+    },
+    {
+      title: t("pricing.plans.pro.name"),
+      subtitle: t("pricing.plans.pro.description"),
+      price: t("pricing.plans.pro.price"),
+      period: t("pricing.plans.pro.period"),
+      icon: <Crown className="h-6 w-6" />,
+      gradient: "from-purple-500 to-pink-600",
+      buttonText: t("pricing.plans.pro.buttonText"),
+      features: [
+        { text: t("pricing.plans.pro.list1"), included: true },
+        { text: t("pricing.plans.premium.list2"), included: true },
+        { text: t("pricing.plans.premium.list3"), included: true },
+        { text: t("pricing.plans.premium.list4"), included: true },
+        { text: t("pricing.plans.premium.list5"), included: true },
+        { text: t("pricing.plans.premium.list6"), included: true },
+        { text: t("pricing.plans.premium.list7"), included: true },
+        { text: t("pricing.plans.premium.list8"), included: true },
+        { text: t("pricing.plans.premium.list9"), included: true },
+        { text: t("pricing.plans.premium.list10"), included: true },
+        { text: t("pricing.plans.premium.list11"), included: true },
+        { text: t("pricing.plans.premium.list12"), included: true },
+        { text: t("pricing.plans.pro.list13"), included: true },
+        { text: t("pricing.plans.basic.list14"), included: true },
+        { text: t("pricing.plans.premium.list14"), included: true },
+        { text: t("pricing.plans.premium.list15"), included: true },
+        { text: t("pricing.plans.premium.list16"), included: true },
+        { text: t("pricing.plans.premium.list17"), included: true },
+        { text: t("pricing.plans.premium.list18"), included: true },
+        { text: t("pricing.plans.premium.list19"), included: true },
+        { text: t("pricing.plans.premium.list20"), included: false },
+      ],
+    },
+    {
+      title: t("pricing.plans.premium.name"),
+      subtitle: t("pricing.plans.premium.description"),
+      price: t("pricing.plans.premium.price"),
+      period: t("pricing.plans.premium.period"),
+      icon: <Crown className="h-6 w-6" />,
+      gradient: " from-blue-500 to-purple-600",
+      buttonText: t("pricing.plans.premium.buttonText"),
+      features: [
+        { text: t("pricing.plans.premium.list1"), included: true },
+        { text: t("pricing.plans.premium.list2"), included: true },
+        { text: t("pricing.plans.premium.list3"), included: true },
+        { text: t("pricing.plans.premium.list4"), included: true },
+        { text: t("pricing.plans.premium.list5"), included: true },
+        { text: t("pricing.plans.premium.list6"), included: true },
+        { text: t("pricing.plans.premium.list7"), included: true },
+        { text: t("pricing.plans.premium.list8"), included: true },
+        { text: t("pricing.plans.premium.list9"), included: true },
+        { text: t("pricing.plans.premium.list10"), included: true },
+        { text: t("pricing.plans.premium.list11"), included: true },
+        { text: t("pricing.plans.premium.list12"), included: true },
+        { text: t("pricing.plans.premium.list13"), included: true },
+        { text: t("pricing.plans.basic.list14"), included: true },
+        { text: t("pricing.plans.premium.list14"), included: true },
+        { text: t("pricing.plans.premium.list15"), included: true },
+        { text: t("pricing.plans.premium.list16"), included: true },
+        { text: t("pricing.plans.premium.list17"), included: true },
+        { text: t("pricing.plans.premium.list18"), included: true },
+        { text: t("pricing.plans.premium.list19"), included: true },
+        { text: t("pricing.plans.premium.list20"), included: true },
+      ],
+    },
+  ];
 
-  const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 })
-  const breadcrumbs = [{ label: "হোম", href: "/" }, { label: "প্যাকেজ এবং প্রাইস" }]
+  const [sectionRef, isSectionInView] = useInView({ threshold: 0.1 });
+  const breadcrumbs = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("pricing.bannar") },
+  ];
   return (
+    <>
+    <Helmet>
+      <title>Transport Software Pricing | Tramessy</title>
+    </Helmet>
     <section className="bg-gray-50 py-8">
-      <PageHero title="প্যাকেজ এবং প্রাইস" breadcrumbs={breadcrumbs} />
+      <PageHero title={t("pricing.bannar")} breadcrumbs={breadcrumbs} />
       <div ref={sectionRef} className="container mx-auto px-4 py-16">
         <h2
           className={`text-2xl md:text-3xl font-bold text-center text-gray-700 mb-12 ${isSectionInView ? "animate-fade-up" : "opacity-0"}`}
         >
-          আমাদের মূল্য পরিকল্পনা
+          {t("pricing.title")}
         </h2>
-        
+
         {/* Billing Toggle */}
-        <div className="flex justify-center gap-4 mb-10 bg-gray-100 lg:mx-[20%] xl:mx-[26.5%]">
+        <div className="flex justify-center gap-4 mb-10 bg-gray-100 lg:mx-[20%] xl:mx-[21.5%]">
           <button
             onClick={() => setBillingCycle("monthly")}
             className={`px-4 py-2 rounded-lg ${
@@ -177,7 +212,7 @@ const calculateDiscountedPrice = (price) => {
                 : "bg-white shadow text-gray-700"
             }`}
           >
-            মাসিক পেমেন্ট
+            {t("pricing.tab.monthly")}
           </button>
           <button
             onClick={() => setBillingCycle("halfYearly")}
@@ -187,7 +222,7 @@ const calculateDiscountedPrice = (price) => {
                 : "bg-white shadow text-gray-700"
             }`}
           >
-            ৬ মাস পেমেন্ট(১০% ছাড়)
+            {t("pricing.tab.halfYearly")}
           </button>
           <button
             onClick={() => setBillingCycle("yearly")}
@@ -197,38 +232,50 @@ const calculateDiscountedPrice = (price) => {
                 : "bg-white shadow text-gray-700"
             }`}
           >
-            ১ বছর পেমেন্ট(২০% ছাড়)
+            {t("pricing.tab.yearly")}
           </button>
         </div>
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8`}>
           {pricingPlans.map((plan, index) => {
-            const discountedPrice = calculateDiscountedPrice(plan.price)
+            const discountedPrice = calculateDiscountedPrice(plan.price);
 
-  let badge = null
-  if (billingCycle === "halfYearly") badge = "১০% বিশেষ অফার"
-  if (billingCycle === "yearly") badge = "২০% বিশেষ অফার"
-            
-            return <PricingCard
-              key={index}
-              title={plan.title}
-              subtitle={plan.subtitle}X
-              // price={plan.price}
-              // period={plan.period}
-              badge={badge}
-              price={discountedPrice}
-              period={billingCycle === "monthly" ? "মাস" : billingCycle === "halfYearly" ? "মাস" : "মাস"}
-              features={plan.features}
-              isPopular={plan.isPopular}
-              buttonText={plan.buttonText}
-              gradient={plan.gradient}
-              icon={plan.icon}
-              isSectionInView={isSectionInView}
-            />
+            let badge = null;
+            if (billingCycle === "halfYearly") badge = t("pricing.offer.halfYearly");
+            if (billingCycle === "yearly") badge = t("pricing.offer.yearly");
+
+            return (
+              <PricingCard
+                key={index}
+                title={plan.title}
+                subtitle={plan.subtitle}
+                X
+                // price={plan.price}
+                // period={plan.period}
+                badge={badge}
+                price={discountedPrice}
+                // period={billingCycle === "monthly" ? "মাস" : billingCycle === "halfYearly" ? "মাস" : "মাস"}
+                period={
+                  billingCycle === "monthly"
+                    ? t("pricing.plans.basic.period")
+                    : billingCycle === "halfYearly"
+                      ? t("pricing.plans.basic.period")
+                      : t("pricing.plans.basic.period")
+                }
+                features={plan.features}
+                isPopular={plan.isPopular}
+                buttonText={plan.buttonText}
+                gradient={plan.gradient}
+                icon={plan.icon}
+                isSectionInView={isSectionInView}
+              />
+            );
           })}
         </div>
       </div>
     </section>
-  )
-}
+    </>
+    
+  );
+};
 
-export default PackagePricing
+export default PackagePricing;
