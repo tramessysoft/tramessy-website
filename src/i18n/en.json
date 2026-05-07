@@ -455,6 +455,16 @@
   "list20": "Custom feature development support"
 
       }
-    }
+    },
+    "app-download":{
+    "title" : "Download Tramessy App",
+    "description" : "Get your packages delivered faster with our smart delivery solution. Track in real-time and enjoy seamless logistics.",
+    "scan" : "Scan QR code to download Android App",
+    "or" :"OR",
+    "download": "Download Anroid App",
+    "downloading": "Downloading",
+    "user": "Active Users",
+    "rate": "App Rating"
+  }
   }
 }

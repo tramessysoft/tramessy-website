@@ -1,3 +1,4 @@
+import AppDownloadSection from "../../components/home/AppSection";
 import Banner from "../../components/home/Banner";
 import ChooseEdufy from "../../components/home/ChooseEdufy";
 import ClientList from "../../components/home/ClientList";
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Transport Management Software in Bangladesh | Tramessy</title>
+        {/* <title>Transport Management Software in Bangladesh | Tramessy</title> */}
 
         <meta
           name="description"
@@ -31,6 +32,7 @@ const Home = () => {
         <ClientList />
         <FAQSection />
         <Review />
+        <AppDownloadSection/>
       </div>
     </>
   );

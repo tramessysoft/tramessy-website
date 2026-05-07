@@ -22,7 +22,8 @@ export default {
       },
       colors: {
         primary: "#11375b",
-        secondary: {
+        secondary: "#14b8a6",
+        gr: {
           100: "#E2E2D5",
           200: "#888883",
         },
