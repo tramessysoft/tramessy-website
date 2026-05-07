@@ -94,7 +94,7 @@ const apkUrl = `${window.location.origin}/tramessy.apk`;
         <div className="mt-8 bg-white rounded-2xl shadow-lg p-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: '50K+', label: t('app-download.user') },
+              { number: '50+', label: t('app-download.user') },
             //   { number: '10K+', label: 'Daily Deliveries' },
               { number: '4.8★', label: t('app-download.rate') }
             ].map((stat, index) => (
