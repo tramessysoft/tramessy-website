@@ -9,6 +9,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import RefundsPolicy from "../Pages/RefundPolicy/RefundPolicy";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsOfService from "../Pages/TermsOfService/TermsOfService";
+import Payment from "../Pages/payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/terms-of-service",
         element: <TermsOfService/>
+      },
+      {
+        path: "/payment",
+        element: <Payment/>
       }
     ],
   },

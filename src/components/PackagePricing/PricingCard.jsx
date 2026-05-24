@@ -79,7 +79,10 @@ const PricingCard = ({
           ))}
         </ul>
         
-        <Link to="/contact-us">
+        <Link to="/payment"  state={{ 
+    amount: price,
+    planName: title
+  }}>
         <Button 
           className={`w-full py-3 font-semibold transition-all duration-300 ${
             isPopular

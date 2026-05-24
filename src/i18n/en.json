@@ -457,6 +457,43 @@
       }
     }
   },
+  "payment": {
+    "secureGateway": "Secure Payment Gateway",
+    "payVia": "Pay via",
+    "description": "Scan the QR code or use your card to complete payment securely through BRAC Bank",
+    "plan": "Plan",
+    "paySmart": "PaySmart",
+    "confidenceEndless": "Confidence Endless",
+    
+    "accepted": "Accepted",
+    
+    "verifiedMerchant": "✓ Verified Merchant",
+    
+    "merchantName": "Merchant Name",
+    "merchantId": "Merchant ID",
+    "terminalId": "Terminal ID",
+    
+    "copied": "✓ Copied to clipboard!",
+    
+    "paymentAmount": "Payment Amount",
+    
+    "youArePaying": "You are paying",
+    "forPlan": "for",
+    
+    "howToPay": "How to Pay",
+    
+    "step1": "Open your BRAC Bank Astha or any mobile banking app",
+    "step2": "Go to Scan QR / PaySmart section",
+    "step3": "Scan the QR code shown on the left",
+    "step4": "Enter amount & confirm payment",
+    
+    "securePayment": "100% Secure Payment",
+    "securePaymentDesc": "Protected by BRAC Bank's PaySmart encryption",
+    
+    "activeUsers": "Active Users",
+    "customerRating": "Customer Rating",
+    "secureTransactions": "Secure Transactions"
+  },
   "app-download":{
     "title" : "Download Tramessy App",
     "description" : "Get your packages delivered faster with our smart delivery solution. Track in real-time and enjoy seamless logistics.",
