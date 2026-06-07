@@ -11,13 +11,17 @@ const Features = () => {
   ];
   return (
     <>
-      <Helmet>
-        {/* <title>Tramessy | Fleet Management Features</title> */}
-      </Helmet>
-       <meta
+       <Helmet>
+        <title>Features | Tramessy - Fleet & Transport Management Software</title>
+        <meta
           name="description"
-          content="Fleet & Transport ERP Software Bangladesh | Tramessy"
+          content="Explore Tramessy's powerful features — trip management, vehicle tracking, driver management, billing, and real-time reports for transport businesses in Bangladesh."
         />
+        <meta
+          name="keywords"
+          content="Tramessy features, fleet management features Bangladesh, trip management software, vehicle tracking system BD, transport ERP"
+        />
+      </Helmet>
       <main>
         <PageHero title={t("nav.features")} breadcrumbs={breadcrumbs} />
         <div className="container mx-auto px-4 py-8">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import PageHero from "../../components/helpingComp/PageHero";
 
 export default function PrivacyPolicy() {
@@ -7,7 +8,19 @@ export default function PrivacyPolicy() {
     { label: "Privacy Policy" }, 
   ]
   return (
-    <main className=" ">
+    <>
+    <Helmet>
+        <title>Privacy Policy | Tramessy - Transport Management Software</title>
+        <meta
+          name="description"
+          content="Read Tramessy's privacy policy to understand how BMS Tech Logistics Ltd. collects, uses, and protects your personal data when using our transport management software."
+        />
+        <meta
+          name="keywords"
+          content="Tramessy privacy policy, data protection transport software Bangladesh, BMS Tech Logistics privacy"
+        />
+      </Helmet>
+      <main className=" ">
         <PageHero title={"Privacy Policy"} breadcrumbs={breadcrumbs}/>
       <div className="max-w-4xl mx-auto shadow-lg rounded-lg p-5 ">
       <div className="flex justify-between items-center mb-6">
@@ -163,5 +176,7 @@ export default function PrivacyPolicy() {
       </section>
       </div>
     </main>
+    </>
+    
   )
 }

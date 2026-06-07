@@ -4,6 +4,7 @@ import { useState } from "react";
 import paymentImg from "../../assets/image/payment-bangla.jpeg";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 const Payment = () => {
   const [activeTab, setActiveTab] = useState("qr");
   const [copied, setCopied] = useState(false);
@@ -28,7 +29,19 @@ const Payment = () => {
   };
 
   return (
-    <section
+    <>
+     <Helmet>
+        <title>Payment | Tramessy - Transport Management Software</title>
+        <meta
+          name="description"
+          content="Pay securely for your Tramessy transport management software subscription via BRAC Bank Bangla QR, VISA, or Mastercard."
+        />
+        <meta
+          name="keywords"
+          content="Tramessy payment, transport software subscription payment Bangladesh, BRAC Bank QR payment, fleet software billing"
+        />
+      </Helmet>
+      <section
       id="payment"
       className="w-full min-h-screen pb-20 pt-32"
       style={{
@@ -292,6 +305,8 @@ const Payment = () => {
         </div>
       </div>
     </section>
+    </>
+    
   );
 };
 

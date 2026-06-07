@@ -22,7 +22,7 @@ const Home = () => {
 
         <meta
           name="keywords"
-          content="transport management software, fleet management system Bangladesh, logistics software BD, truck management system"
+          content="trameesy, Tramessy, transport management software, fleet management system Bangladesh, logistics software BD, truck management system"
         />
       </Helmet>
       <div>

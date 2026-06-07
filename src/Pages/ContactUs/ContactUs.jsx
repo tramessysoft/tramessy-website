@@ -14,6 +14,7 @@ import {
 import PageHero from '../../components/helpingComp/PageHero';
 import { useInView } from '../../shared/hooks/UseInView';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
 
 const initialFormState = {
@@ -120,7 +121,19 @@ const { t } = useTranslation()
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <>
+    <Helmet>
+        <title>Contact Us | Tramessy - Transport Management Software</title>
+        <meta
+          name="description"
+          content="Get in touch with Tramessy for transport management software support, demo requests, or inquiries. Call, email, or message us directly from Bangladesh."
+        />
+        <meta
+          name="keywords"
+          content="contact Tramessy, transport software support Bangladesh, fleet management helpline, logistics software demo BD"
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       {/*  Header */}
       <PageHero title={t("nav.contact")} breadcrumbs={breadcrumbs} />
       {/* ✅ Main Section */}
@@ -304,6 +317,8 @@ const { t } = useTranslation()
         </section>
       </main>
     </div>
+    </>
+    
   );
 };
 

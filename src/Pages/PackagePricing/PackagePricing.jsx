@@ -191,8 +191,16 @@ const PackagePricing = () => {
   return (
     <>
     <Helmet>
-      <title>Transport Software Pricing | Tramessy</title>
-    </Helmet>
+  <title>Pricing Plans | Tramessy - Transport Management Software</title>
+  <meta
+    name="description"
+    content="Choose the right Tramessy plan for your business. Affordable monthly, half-yearly, and yearly pricing for transport and fleet management software in Bangladesh."
+  />
+  <meta
+    name="keywords"
+    content="Tramessy pricing, transport software price Bangladesh, fleet management plan, logistics software subscription BD"
+  />
+</Helmet>
     <section className="bg-gray-50 py-8">
       <PageHero title={t("pricing.bannar")} breadcrumbs={breadcrumbs} />
       <div ref={sectionRef} className="container mx-auto px-4 py-16">

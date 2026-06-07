@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import PageHero from "../../components/helpingComp/PageHero";
 
 export default function RefundsPolicy() {
@@ -7,7 +8,19 @@ export default function RefundsPolicy() {
     { label: "Refunds Policy" }, 
   ]
   return (
-    <main className=" ">
+    <>
+    <Helmet>
+        <title>Refunds Policy | Tramessy - Transport Management Software</title>
+        <meta
+          name="description"
+          content="Learn about Tramessy's refund policy for monthly and annual subscriptions, custom development, and software integrations by BMS Tech Logistics Ltd."
+        />
+        <meta
+          name="keywords"
+          content="Tramessy refund policy, transport software refund Bangladesh, BMS Tech Logistics refunds, subscription cancellation policy"
+        />
+      </Helmet>
+      <main className=" ">
         <PageHero title={"Refunds Policy"} breadcrumbs={breadcrumbs}/>
       <div className="max-w-4xl mx-auto shadow-lg rounded-lg p-5 ">
         <div className="flex justify-between items-center mb-6">
@@ -120,6 +133,8 @@ export default function RefundsPolicy() {
       </section>
       </div>
     </main>
+    </>
+    
   )
 }
 

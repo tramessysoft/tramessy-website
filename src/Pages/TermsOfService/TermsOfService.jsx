@@ -7,7 +7,19 @@ export default function TermsOfService() {
     { label: "Terms Of Service" }, 
   ]
   return (
-    <main className=" ">
+    <>
+     <Helmet>
+        <title>Terms of Service | Tramessy - Transport Management Software</title>
+        <meta
+          name="description"
+          content="Read Tramessy's terms of service and conditions for using our transport management software, provided by BMS Tech Logistics Ltd. in Bangladesh."
+        />
+        <meta
+          name="keywords"
+          content="Tramessy terms of service, transport software terms Bangladesh, BMS Tech Logistics terms, fleet software conditions"
+        />
+      </Helmet>
+      <main className=" ">
         <PageHero title={"Terms Of Service"} breadcrumbs={breadcrumbs}/>
       <div className="max-w-4xl mx-auto shadow-lg rounded-lg p-5 ">
       <div className="flex justify-between items-center mb-6">
@@ -139,5 +151,7 @@ export default function TermsOfService() {
       </section>
       </div>
     </main>
+    </>
+    
   )
 }
