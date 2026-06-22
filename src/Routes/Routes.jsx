@@ -10,6 +10,8 @@ import RefundsPolicy from "../Pages/RefundPolicy/RefundPolicy";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsOfService from "../Pages/TermsOfService/TermsOfService";
 import Payment from "../Pages/payment/Payment";
+import Login from "../Pages/Login";
+import Blog from "../Pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment/>
+      },
+      {
+        path: "/signin",
+        element: <Login/>
+      },
+      {
+        path: "/blog",
+        element: <Blog/>
       }
     ],
   },

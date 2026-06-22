@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, LogIn, Menu, X } from "lucide-react";
 import logo from "../../assets/logo.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "../../components/LanguageSwitcher";
@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: t("nav.features"), href: "/features", type: "link" },
     { name: t("nav.pricing"), href: "/package-pricing", type: "link" },
     { name: t("nav.reviews"), href: "review", type: "scroll" },
+    { name: t("nav.blog"), href: "/blog", type: "link" },
     { name: t("nav.about"), href: "/about-us", type: "link" },
     { name: t("nav.contact"), href: "/contact-us", type: "link" },
   ];
@@ -129,17 +130,23 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <div className="flex items-center gap-5">
-            <div>
-              <LanguageSwitcher />
-            </div>
-            {/* <Link to="/contact-us"> */}
-            <button
-              onClick={handleCtaClick}
-              className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition-all duration-300 font-medium transform hover:scale-105"
-            >
-              {t("nav.demo_book")}
-            </button>
-            {/* </Link> */}
+              <div>
+                <LanguageSwitcher />
+              </div>
+              {/* <Link to="/contact-us"> */}
+              {/* <Link to="/signin">
+              <button className="flex items-center gap-2 rounded-lg border border-card-border bg-surface px-3.5 py-2 text-sm font-medium text-foreground transition-colors hover:bg-input">
+                  <LogIn className="h-4 w-4" aria-hidden="true" />
+                  Sign in
+                </button>
+                </Link> */}
+              <button
+                onClick={handleCtaClick}
+                className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition-all duration-300 font-medium transform hover:scale-105"
+              >
+                {t("nav.demo_book")}
+              </button>
+              {/* </Link> */}
             </div>
           </div>
 
@@ -184,6 +191,10 @@ export default function Navbar() {
                   <LanguageSwitcher />
                 </div>
                 {/* <Link to="/contact-us"> */}
+                {/* <button className="flex items-center gap-2 rounded-lg border border-card-border bg-surface px-3.5 py-2 text-sm font-medium text-foreground transition-colors hover:bg-input">
+                  <LogIn className="h-4 w-4" aria-hidden="true" />
+                  Sign in
+                </button> */}
                 <button
                   onClick={handleCtaClick}
                   className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg transition-all duration-300 font-medium transform hover:scale-105"

@@ -110,7 +110,7 @@
       "description5": "Automated and manual notifications via SMS, WhatsApp, and Email.",
    
       "title6": "Multi-User & Multi-Location Support",
-      "description": "Manage multiple branches and role-based users—perfect for multi-location businesses.",
+      "description6": "Manage multiple branches and role-based users—perfect for multi-location businesses.",
   
       "title7": "Module-Based Customization",
       "description7": "Enable or disable features based on business needs—customizable for rent-a-car, trucking, or bus services.",
@@ -305,6 +305,7 @@
     "features": "Features",
     "pricing": "Packages and Pricing",
     "reviews": "Reviews",
+    "blog": "Blog",
     "about": "About Us",
     "contact": "Contact",
     "demo_book": "Demo Book"
@@ -500,5 +501,101 @@
     "downloading": "Downloading",  
     "user": "Active Users",
     "rate": "App Rating"
+  },
+  
+  "blog": {
+    "title": "Ideas, Updates & Stories",
+    "subtitle": "From the Road Ahead",
+    "description": "Insights, updates, and expert perspectives on logistics, transportation management, technology, design, and artificial intelligence from the team building the future of transport management.",
+    "featured": {
+      "badge": "Featured Post",
+      "read_article": "Read Article"
+    },
+
+    "categories": {
+      "all": "All",
+      "product": "Product",
+      "engineering": "Engineering",
+      "design": "Design",
+      "ai": "AI",
+      "company": "Company"
+    },
+
+    "search_placeholder": "Search articles...",
+
+    "empty_state": "No articles found. Try a different search term or category.",
+
+    "newsletter": {
+      "title": "Never Miss an Update",
+      "description": "Get the latest articles, product updates, engineering insights, and industry news delivered directly to your inbox.",
+      "email_placeholder": "Enter your email address",
+      "button": "Subscribe"
+    },
+
+    "posts": [
+      {
+        "category": "Product",
+        "title": "Reimagining Logistics for 2026: The All-New Tramessy Platform",
+        "excerpt": "We rebuilt Tramessy from the ground up with faster routing, real-time tracking, and AI-powered assistance to help transportation businesses operate more efficiently.",
+        "author": "Maya Rahman",
+        "date": "January 14, 2026",
+        "readTime": "8 min read"
+      },
+
+      {
+        "category": "Engineering",
+        "title": "How We Reduced Route Computation Time by 73%",
+        "excerpt": "A technical deep dive into the architecture improvements that made real-time route planning significantly faster and more reliable.",
+        "author": "Daniel Cho",
+        "date": "January 9, 2026",
+        "readTime": "6 min read"
+      },
+
+      {
+        "category": "Design",
+        "title": "Designing for Trust: The New Tramessy Design System",
+        "excerpt": "Why we introduced a new design language and how it improves usability, accessibility, and customer confidence.",
+        "author": "Lena Park",
+        "date": "January 6, 2026",
+        "readTime": "5 min read"
+      },
+
+      {
+        "category": "AI",
+        "title": "Meet Copilot: Your 24/7 AI Dispatcher",
+        "excerpt": "Discover predictive scheduling, anomaly detection, and natural-language fleet management powered by artificial intelligence.",
+        "author": "Arjun Mehta",
+        "date": "January 2, 2026",
+        "readTime": "7 min read"
+      },
+
+      {
+        "category": "Product",
+        "title": "Live Tracking 2.0: Faster and More Accurate Updates",
+        "excerpt": "Every vehicle, shipment, and delivery can now be monitored in real time with sub-second updates across your dashboard.",
+        "author": "Maya Rahman",
+        "date": "December 28, 2025",
+        "readTime": "4 min read"
+      },
+
+      {
+        "category": "Company",
+        "title": "Tramessy Secures New Funding to Expand Global Operations",
+        "excerpt": "Learn what this major milestone means for our customers, partners, and the future growth of the Tramessy platform.",
+        "author": "Priya Nair",
+        "date": "December 20, 2025",
+        "readTime": "3 min read"
+      },
+
+      {
+        "category": "Engineering",
+        "title": "Building a Global Routing Data Pipeline",
+        "excerpt": "An easy-to-understand look at how we collect, process, and analyze massive amounts of geospatial data worldwide.",
+        "author": "Daniel Cho",
+        "date": "December 15, 2025",
+        "readTime": "9 min read"
+      }
+    ]
   }
+
 }
